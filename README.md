@@ -23,7 +23,7 @@ OpenCV 智能检测豆包水印区域并 inpaint 修复。支持 PIL Lanczos 3×
 ### 1. Clone 仓库
 
 ```bash
-git clone https://github.com/2716361407/doubao-image-toolkit.git
+git clone https://github.com/zhenliuMr/doubao-image-toolkit.git
 cd doubao-image-toolkit
 ```
 
