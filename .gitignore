@@ -1,0 +1,17 @@
+node_modules/
+.godot/
+*.translation
+*.tmp
+*.bak
+*.gen.*
+__pycache__/
+*.pyc
+.env
+.vscode/
+.idea/
+*.pck
+*.zip
+Thumbs.db
+.DS_Store
+image-tools/temp/
+.git-rewrite/
