@@ -15,13 +15,58 @@ OpenCV 智能检测豆包水印区域并 inpaint 修复。支持 PIL Lanczos 3×
 
 ## 安装
 
+### 前置要求
+- **Node.js** ≥ 18
+- **Python** ≥ 3.8 + pip
+- **Chrome** 浏览器
+
+### 1. Clone 仓库
+
 ```bash
 git clone https://github.com/2716361407/doubao-image-toolkit.git
 cd doubao-image-toolkit
+```
+
+### 2. 安装依赖 + 注册 Skill
+
+#### 方式一：自动安装（推荐）
+
+```bash
 install.bat
 ```
 
-`install.bat` 自动完成：npm 依赖 → Playwright 浏览器 → Python 依赖 → 注册 6 个 Skill 指令。
+自动完成：npm 依赖 → Playwright 浏览器 → Python 依赖 → 注册 Skill。
+
+`install.bat` 会**自动检测**你安装的 AI 平台，也支持手动指定：
+
+```bash
+install.bat --reasonix     # Reasonix Code  → ~\.agents\skills\
+install.bat --claude       # Claude Code    → ~\.claude\skills\
+install.bat --codex        # Codex / OpenAI → ~\.codex\commands\
+```
+
+#### 方式二：手动安装
+
+```bash
+# Node.js
+cd doubao-gen && npm install && npx playwright install chromium && cd ..
+
+# Python
+pip install -r requirements.txt
+
+# 注册 Skill（按你的 AI 平台选择目录）
+xcopy skills\*.md %USERPROFILE%\.agents\skills\     # Reasonix
+xcopy skills\*.md %USERPROFILE%\.claude\skills\     # Claude Code
+xcopy skills\*.md %USERPROFILE%\.codex\commands\    # Codex
+```
+
+### 3. 首次登录豆包
+
+```bash
+npx --prefix doubao-gen ts-node --project doubao-gen/tsconfig.json doubao-gen/scripts/main.ts "测试" --ui
+```
+
+在弹出的浏览器完成登录，后续无需重复。
 
 ## Skill 指令使用教程
 
